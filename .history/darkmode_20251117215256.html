@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body{
+            background: whit;
+            color: black;
+            transition: 0.3s;
+
+        }
+        body.dark{
+            background: #121212;
+            color: white;
+        }
+        .btnmodela{
+            background: #333;
+            color: white;
+            padding: 1opx 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btnmodela:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnmodel" class="btnmodela">MODE</button>
+    <form >
+    <input id="inputname" type="text" name="username" placeholder="Username">
+   </form>
+   <button id="mybutton">Click Me</button>
+    <script>
+        const mybutton = document.getElementById('mybutton')
+       mybutton.addEventListener('click',function(){
+           const name =document.getElementById('inputname').value;
+
+            if(name !==""){
+                alert("Hello,"+name+" !");
+            }else{
+               alert("enter a name");
+            }
+       });
+
+     const savedtheme = localStorage.getItem('theme');
+
+        if(savedtheme ===('dark')) {
+            document.body.classList.add('dark');
+
+        }
+
+        document.getElementById('btnmodel').addEventListener('click', function(){
+            document.body.classList.toggle('dark');
+        });
+        if(document.body.classList.contains('dark')){
+            localStorage.setItem('theme','dark');
+        }else{
+            localStorage.setItem('theme','light');
+        }
+        </script>
+</body>
+</html>

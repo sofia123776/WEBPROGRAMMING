@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script>
+        document.addEventListener('DOMContentloaded', function() {
+            document.querySelector('form').onsubmit = function() {
+                const li = document.querySelector('li').value;
+                
+                Document.createElement('li');
+                li.innerHtml = tasks;
+
+                document.querySelector('#tasks').append('li');
+
+                return false;
+
+
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul id = "tasks"></ul>
+
+    <form >
+        <input id = "task" placeholder="New Task" type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>
